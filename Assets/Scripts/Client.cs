@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -8,9 +9,9 @@ namespace DefaultNamespace
         public ScriptableObjects.ScriptableClient client;
         [SerializeField] TMPro.TextMeshProUGUI dialogueText;
 
-        int scoreService;
+        int scoreService = 100;
         readonly Vector3 orderPoint = Vector3.zero;
-        bool asdf;
+        bool speaking;
 
 
         void Awake()
@@ -18,7 +19,6 @@ namespace DefaultNamespace
             dialogueText = FindObjectOfType<TMPro.TextMeshProUGUI>().name == "DialogueText"
                 ? FindObjectOfType<TMPro.TextMeshProUGUI>()
                 : null;
-            Debug.Log(dialogueText.name);
         }
 
         void Start()
@@ -26,11 +26,11 @@ namespace DefaultNamespace
             StartCoroutine(MoveTo(orderPoint));
         }
 
-        IEnumerator MoveTo(Vector3 counter)
+        public IEnumerator MoveTo(Vector3 where)
         {
-            while (transform.position != counter)
+            while (transform.position != where)
             {
-                transform.position = Vector3.MoveTowards(transform.position, counter, 0.3f);
+                transform.position = Vector3.MoveTowards(transform.position, where, 0.3f);
                 yield return new WaitForSeconds(0.1f);
             }
         }
@@ -42,24 +42,44 @@ namespace DefaultNamespace
                 if (dialogueText != null)
                 {
                     client.SayOrder();
-                    if (!asdf)
+                    if (!speaking)
                         ShowDialog();
                 }
+
+                WaitUntilOrder();
+
+                if (OrderTaken)
+                    Satisfy("agua");
+            }
+        }
+
+        void WaitUntilOrder()
+        {
+            if (dialogueText.text == client.clientDialogue)
+            {
+                OrderTaken = true;
+                speaking = false;
+            }
+        }
+
+        void Satisfy(string order)
+        {
+            foreach (var item in client.hate.Where(item => item.Contains(order)))
+            {
+                Debug.Log("contiene agua");
+                scoreService -= 10;
+                Debug.Log(scoreService);
             }
 
-            // if (OrderTaken)
-            //     Satisfy("agua");
+            StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
         }
+
+        public bool OrderTaken { get; set; }
 
         void ShowDialog()
         {
-                asdf = true;
-                StartCoroutine(dialogueText.GetComponent<ClientText>().TypeText(client.clientDialogue));
+            speaking = true;
+            StartCoroutine(dialogueText.GetComponent<ClientText>().TypeText(client.clientDialogue));
         }
-        // if (order.Contains(client.hate[0]))
-        // {
-        //     Debug.Log("contiene agua");
-        //     scoreService -= 10;
-        // }
     }
 }

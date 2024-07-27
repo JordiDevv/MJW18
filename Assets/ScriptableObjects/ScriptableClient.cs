@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ namespace ScriptableObjects
         public GameObject clientSprite;
         public AudioSource clientVoice;
 
-        public string[] order;
-        public string[] hate;
+        public List<string> order;
+        public List<string> hate;
 
         bool IsSpeaking { get; set; } = false;
         
