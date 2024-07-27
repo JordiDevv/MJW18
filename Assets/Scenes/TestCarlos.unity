@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &956302748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -679,7 +679,11 @@ PrefabInstance:
     - target: {fileID: 1109599822292438292, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1752400625}
+    - target: {fileID: 1109599822292438292, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
+      propertyPath: displayTextPanel
+      value: 
+      objectReference: {fileID: 956302747}
     - target: {fileID: 4825266469732269461, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_Name
       value: Client

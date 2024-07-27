@@ -6,7 +6,6 @@ public class DisplayTextPanel : MonoBehaviour
     [SerializeField] GameObject textPanel;
     float speakSpeed;
     Rect rectTransform;
-    bool IsSpeaking { get; set; } = true;
 
     void Awake()
     {
@@ -14,9 +13,9 @@ public class DisplayTextPanel : MonoBehaviour
         rectTransform = gameObject.GetComponent<RectTransform>().rect;
     }
     
-    void Start()
+    void OnEnable()
     {
-        if (IsSpeaking) StartCoroutine(Speak());
+        StartCoroutine(Speak());
     }
 
     IEnumerator Speak()
@@ -34,7 +33,6 @@ public class DisplayTextPanel : MonoBehaviour
     void HideText()
     {
         textPanel.SetActive(false);
-        IsSpeaking = false;
     }
 
 }

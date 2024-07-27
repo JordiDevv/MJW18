@@ -8,18 +8,11 @@ namespace DefaultNamespace
     {
         public ScriptableObjects.ScriptableClient client;
         [SerializeField] TMPro.TextMeshProUGUI dialogueText;
+        [SerializeField] GameObject displayTextPanel;
 
         int scoreService = 100;
         readonly Vector3 orderPoint = Vector3.zero;
         bool speaking;
-
-
-        void Awake()
-        {
-            dialogueText = FindObjectOfType<TMPro.TextMeshProUGUI>().name == "DialogueText"
-                ? FindObjectOfType<TMPro.TextMeshProUGUI>()
-                : null;
-        }
 
         void Start()
         {
@@ -41,6 +34,7 @@ namespace DefaultNamespace
             {
                 if (dialogueText)
                 {
+                    displayTextPanel.gameObject.SetActive(true);
                     client.SayOrder();
                     if (!speaking)
                         ShowDialog();
@@ -77,6 +71,7 @@ namespace DefaultNamespace
         void ShowDialog()
         {
             speaking = true;
+            
             StartCoroutine(dialogueText.GetComponent<ClientText>().TypeText(client.clientDialogue));
         }
     }
