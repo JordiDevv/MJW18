@@ -75,7 +75,7 @@ public class DraggableObj : MonoBehaviour
     /// </summary>
     private void OnMouseUp() {
         itemBeingDragged = false;
-        if (inDropArea) {
+        if (inDropArea && GameManager.Instance.menuItemsCounter < 4) {
             //compruebo si forma parte de los ingredientes de la pizza
             if (pizzaTopping) {
                 Pizza pizza = target.GetComponent<Pizza>();
@@ -91,7 +91,7 @@ public class DraggableObj : MonoBehaviour
 
 
         } else {
-            transform.position = initialPos;
+            Destroy(gameObject);
         }
     }
 
@@ -136,20 +136,20 @@ public class DraggableObj : MonoBehaviour
             for (int i = 0; i < dropAreaPositions.Length; i++) {
                 if (dropAreaPositions[i].tag == "Pos" && dropAreaPositions[i] != null && dropAreaPositions[i].childCount <= 0) {
 
-
-                    Debug.Log(dropAreaPositions[i].childCount);
+                    
                     float newDistance = Vector2.Distance(dropAreaPositions[i].transform.position, GetMousePosition());
-                    Debug.Log(newDistance);
                     if (newDistance < distance) {
                         newPos = dropAreaPositions[i].transform.position;
                         gameObject.transform.parent = dropAreaPositions[i].transform;
                         
                     }
                     Debug.Log("Hay posicion disponible");
+                   
                 }
             }
             transform.position = newPos;
            GameManager.Instance.menu.Add(itemID);
+           GameManager.Instance.menuItemsCounter++; //aumentamos el contador de objetos
         }
 
 

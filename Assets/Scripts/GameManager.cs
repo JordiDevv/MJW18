@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public int menuItemsCounter; //contador de items colocados en el menu
+
     private void Awake() {
         if (Instance == null) {
             Instance = GetComponent<GameManager>();
@@ -33,14 +35,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+
+
+
     }
 
 
     private void SpawnClient() {
-
         Instantiate(client, spawnPoint);
     
-    
+    }
+
+    /// <summary>
+    /// Acciones que se realizan al terminar de completar el menu
+    /// </summary>
+    private void CheckMenuActions() {
+
+
+
+
     }
 }
