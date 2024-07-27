@@ -47,17 +47,17 @@ public class Pizza : MonoBehaviour
     }
 
 
-
-    private IEnumerator Move() {
+    IEnumerator Move() {
 
         yield return new WaitForSeconds(0.2f);
         while (transform.position != pizzaPoint) {
-        transform.position = Vector3.MoveTowards(transform.position, pizzaPoint, 0.3f);
-        yield return new WaitForSeconds(0.08f);
+            transform.position = Vector3.MoveTowards(transform.position, pizzaPoint, 0.3f);
+            yield return new WaitForSeconds(0.08f);
         }
         while (transform.position != platePoint.transform.position) {
             transform.position = Vector3.MoveTowards(transform.position, platePoint.transform.position, 0.3f);
             yield return new WaitForSeconds(0.08f);
         }
+        GameManager.Instance.menu.Add("Pizza");
     }
 }
