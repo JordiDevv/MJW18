@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
+    int scoreService = 50;
 
     void Awake()
     {
@@ -64,14 +66,21 @@ public class GameManager : MonoBehaviour
         GameObject pizza = GameObject.FindGameObjectWithTag("PIZZA");
 
         dropArea.GetComponent<DropArea>().Reset();
-        Destroy(client,.5f);
         Destroy(pizza);
 
         menuItemsCounter = 0;
         menu.Clear();
 
         playerIsPlaying = false;
-        
+
         LoopGame();
+    }
+
+    public void Satisfy(List<string> hate)
+    {
+        foreach (var item in from item in menu from aaa in hate.Where(aaa => item.Contains(aaa)) select item)
+        {
+            scoreService -= 5;
+        }
     }
 }

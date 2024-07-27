@@ -51,19 +51,12 @@ namespace DefaultNamespace
             {
                 GameManager.Instance.OrderTaken = false;
                 speaking = false;
-                Satisfy("agua");
+                StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
+                GameManager.Instance.Satisfy(client.hate);
+                Destroy(gameObject, 5f);
             }
         }
 
-        void Satisfy(string order)
-        {
-            foreach (var item in client.hate.Where(item => item.Contains(order)))
-            {
-                scoreService -= 10;
-            }
-
-            StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
-        }
 
 
         void ShowDialog()
