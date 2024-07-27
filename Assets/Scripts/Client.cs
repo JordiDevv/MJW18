@@ -39,6 +39,7 @@ namespace DefaultNamespace
                     client.SayOrder();
                     if (!speaking)
                         ShowDialog();
+                   
                 }
 
                 WaitUntilOrder();
@@ -50,21 +51,25 @@ namespace DefaultNamespace
 
         void WaitUntilOrder()
         {
-            if (dialogueText.text == client.clientDialogue)
-            {
+
+           
+            if (dialogueText.text == client.clientDialogue) {
                 OrderTaken = true;
                 speaking = false;
             }
+
         }
 
         void Satisfy(string order)
         {
+            
             foreach (var item in client.hate.Where(item => item.Contains(order)))
             {
                 scoreService -= 10;
             }
 
             StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
+
         }
 
         internal bool OrderTaken { get; set; }

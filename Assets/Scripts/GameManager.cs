@@ -62,5 +62,6 @@ public class GameManager : MonoBehaviour
         menuItemsCounter = 0;
         menu.Clear();
 
+        playerIsPlaying = false;
     }
 }
