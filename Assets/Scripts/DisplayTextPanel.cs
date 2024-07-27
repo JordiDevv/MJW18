@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -29,13 +28,13 @@ public class DisplayTextPanel : MonoBehaviour
 
     void DisplayText()
     {
-        MoveDown();
+        //MoveDown();
         textPanel.SetActive(true);
     }
 
     void HideText()
     {
-        MoveUp();
+        //MoveUp();
         textPanel.SetActive(false);
         IsSpeaking = false;
     }

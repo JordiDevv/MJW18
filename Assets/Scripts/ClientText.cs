@@ -13,13 +13,9 @@ public class ClientText : MonoBehaviour
         dialogueText = gameObject.GetComponent<TMPro.TextMeshProUGUI>();
     }
 
-    void Start()
+    public IEnumerator TypeText(string line)
     {
-        StartCoroutine(TypeText(dialogueLines));
-    }
-
-    IEnumerator TypeText(string line)
-    {
+        Debug.Log("Typing text");
         string textBuffer = null;
         foreach (char c in line)
         {
