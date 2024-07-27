@@ -43,9 +43,16 @@ public class DraggableObj : MonoBehaviour
         itemBeingDragged = true;
 
         initialPos = transform.position;
+        SpawnDraggableObject();
     }
 
 
+    /// <summary>
+    /// Spawnea el objeto que se coge
+    /// </summary>
+    public void SpawnDraggableObject() {
+        Instantiate(gameObject, new Vector3(initialPos.x,initialPos.y,0f), Quaternion.identity);
+    }
 
 
 
@@ -69,10 +76,11 @@ public class DraggableObj : MonoBehaviour
     private void OnMouseUp() {
         itemBeingDragged = false;
         if (inDropArea) {
+            //compruebo si forma parte de los ingredientes de la pizza
             if (pizzaTopping) {
                 Pizza pizza = target.GetComponent<Pizza>();
                 pizza.UpdateSprite(itemID);
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 0.2f);
             } else {
                 FindAvailablePosition();
             }
