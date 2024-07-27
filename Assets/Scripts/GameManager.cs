@@ -50,9 +50,13 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Acciones que se realizan al terminar de completar el menu
     /// </summary>
-    private void CheckMenuActions() {
+    public void ResetActions() {
 
+        GameObject dropArea = GameObject.FindGameObjectWithTag("MENU");
+        GameObject pizza = GameObject.FindGameObjectWithTag("PIZZA");
 
+        dropArea.GetComponent<DropArea>().Reset();
+        Destroy(pizza);
 
 
     }

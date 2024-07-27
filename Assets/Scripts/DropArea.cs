@@ -8,13 +8,7 @@ public class DropArea : MonoBehaviour
 
     public List<GameObject> positionsParent;
 
-    private List<GameObject> children;
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Reset();
-        }
-    }
-    private void Reset() {
+    public void Reset() {
         foreach (var child in positionsParent) {
 
           
