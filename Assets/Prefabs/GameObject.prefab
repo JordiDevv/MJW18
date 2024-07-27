@@ -394,6 +394,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2f849f7065b70c44f91145740c999fb7, type: 3}
+    - target: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4825266469732269461, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_Name
       value: Client
