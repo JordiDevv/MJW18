@@ -23,7 +23,6 @@ namespace ScriptableObjects
             {
                 IsSpeaking = true;
                 clientVoice.Play();
-                
             }
         }
     }
