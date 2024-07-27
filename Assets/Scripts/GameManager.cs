@@ -7,9 +7,20 @@ public class GameManager : MonoBehaviour
     //controla si el jugador esta jugando 
     public bool playerIsPlaying;
 
-    public GameObject client; 
+    public GameObject client;
     public Transform spawnPoint;
-    
+
+    public List<string> menu;
+
+    public static GameManager Instance;
+
+    private void Awake() {
+        if (Instance == null) {
+            Instance = GetComponent<GameManager>();
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

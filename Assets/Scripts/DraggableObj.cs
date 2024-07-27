@@ -149,7 +149,7 @@ public class DraggableObj : MonoBehaviour
                 }
             }
             transform.position = newPos;
-            target.gameObject.GetComponent<DropArea>().menu.Add(itemID);
+           GameManager.Instance.menu.Add(itemID);
         }
 
 

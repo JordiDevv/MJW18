@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Pizza : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    public Vector3 pizzaPoint;
 
-    private Sprite sprite;
+    public Transform platePoint;
+    public SpriteRenderer spriteRenderer1, spriteRenderer2;
+    private Sprite sprite1, sprite2;
+    [SerializeField]
+    private bool isComplete; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +28,35 @@ public class Pizza : MonoBehaviour
     /// Actualiza el sprite de la pizza
     /// </summary>
     public void UpdateSprite(string spriteName) {
-        sprite = Resources.Load<Sprite>("Sprites/" + spriteName);
-        spriteRenderer.sprite = sprite;
-       Debug.Log(sprite);
+
+        if (!sprite1) {
+            sprite1 = Resources.Load<Sprite>("Sprites/" + spriteName);
+            spriteRenderer1.sprite = sprite1;
+            return;
+            
+        } else if(!isComplete) {
+            sprite2 = Resources.Load<Sprite>("Sprites/" + spriteName);
+            spriteRenderer2.sprite = sprite2;
+            isComplete = true;
+            StartCoroutine("Move");
+        }
+
+        
+       
+       
+    }
+
+
+    private IEnumerator Move() {
+
+        yield return new WaitForSeconds(0.2f);
+        while (transform.position != pizzaPoint) {
+        transform.position = Vector3.MoveTowards(transform.position, pizzaPoint, 0.3f);
+        yield return new WaitForSeconds(0.08f);
+        }
+        while (transform.position != platePoint.transform.position) {
+            transform.position = Vector3.MoveTowards(transform.position, platePoint.transform.position, 0.3f);
+            yield return new WaitForSeconds(0.08f);
+        }
     }
 }
