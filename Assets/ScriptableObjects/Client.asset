@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientName: Pagus Toco Lores
   clientDialogue: U monster jagame er favoh
-  clientSprite: {fileID: 4825266469732269461, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
+  clientSprite: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
   clientVoice: {fileID: 0}
   order: []
   hate:

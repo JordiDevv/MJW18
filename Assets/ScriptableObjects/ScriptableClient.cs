@@ -9,7 +9,7 @@ namespace ScriptableObjects
     {
         public string clientName;
         public string clientDialogue;
-        public GameObject clientSprite;
+        public SpriteRenderer clientSprite;
         public AudioSource clientVoice;
 
         public List<string> order;
