@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MusicMuteButton
-  - EffectsMuteButton
-  - GM
+  - Pos
+  - MENU
+  - TAG
+  - PIZZA
   layers:
   - Default
   - TransparentFX
