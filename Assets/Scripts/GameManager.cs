@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public List<string> menu;
 
     public static GameManager Instance;
+    
+    internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
 

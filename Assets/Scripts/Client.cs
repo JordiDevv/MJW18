@@ -35,49 +35,41 @@ namespace DefaultNamespace
                 if (dialogueText)
                 {
                     displayTextPanel.gameObject.SetActive(true);
-                    
+
                     client.SayOrder();
                     if (!speaking)
                         ShowDialog();
-                   
                 }
 
                 WaitUntilOrder();
-
-                if (OrderTaken)
-                    Satisfy("agua");
             }
         }
 
         void WaitUntilOrder()
         {
-
-           
-            if (dialogueText.text == client.clientDialogue) {
-                OrderTaken = true;
+            if (GameManager.Instance.OrderTaken)
+            {
+                GameManager.Instance.OrderTaken = false;
                 speaking = false;
+                Satisfy("agua");
             }
-
         }
 
         void Satisfy(string order)
         {
-            
             foreach (var item in client.hate.Where(item => item.Contains(order)))
             {
                 scoreService -= 10;
             }
 
             StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
-
         }
 
-        internal bool OrderTaken { get; set; }
 
         void ShowDialog()
         {
             speaking = true;
-            
+
             StartCoroutine(dialogueText.GetComponent<ClientText>().TypeText(client.clientDialogue));
         }
     }

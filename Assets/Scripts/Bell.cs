@@ -19,5 +19,6 @@ public class Bell : MonoBehaviour
     private void OnMouseDown() {
         Debug.Log("aaaa");
         GameManager.Instance.ResetActions();
+        GameManager.Instance.OrderTaken = true;
     }
 }
