@@ -32,9 +32,9 @@ public class StartNarrative : MonoBehaviour
         firstChat.SetActive(true);
         yield return new WaitForSeconds(timeChat);
         secondChat.SetActive(true);
-        yield return new WaitForSeconds(timeChat);
+        yield return new WaitForSeconds(timeChat + 4);
         firstChat.SetActive(false);
-        yield return new WaitForSeconds(timeChat);
+        yield return new WaitForSeconds(timeChat - 2);
         secondChat.SetActive(false);
         yield return new WaitForSeconds(timeOut);
         SceneManager.LoadScene(sceneName);
