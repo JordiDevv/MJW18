@@ -35,6 +35,7 @@ namespace DefaultNamespace
                 if (dialogueText)
                 {
                     displayTextPanel.gameObject.SetActive(true);
+                    
                     client.SayOrder();
                     if (!speaking)
                         ShowDialog();
@@ -66,7 +67,7 @@ namespace DefaultNamespace
             StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
         }
 
-        bool OrderTaken { get; set; }
+        internal bool OrderTaken { get; set; }
 
         void ShowDialog()
         {

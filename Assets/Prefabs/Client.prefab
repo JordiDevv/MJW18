@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   client: {fileID: 11400000, guid: 42048f524b753a14181945cf51159fed, type: 2}
   dialogueText: {fileID: 0}
+  displayTextPanel: {fileID: 0}
