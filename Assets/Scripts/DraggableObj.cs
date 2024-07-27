@@ -72,6 +72,7 @@ public class DraggableObj : MonoBehaviour
             if (pizzaTopping) {
                 Pizza pizza = target.GetComponent<Pizza>();
                 pizza.UpdateSprite(itemID);
+                Destroy(gameObject, 0.5f);
             } else {
                 FindAvailablePosition();
             }
