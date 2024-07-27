@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DropArea : MonoBehaviour
@@ -8,13 +9,10 @@ public class DropArea : MonoBehaviour
 
     public void Reset()
     {
-        foreach (var child in positionsParent)
+        foreach (var child in positionsParent.Where(child => child.transform.GetChild(0)))
         {
-            if (child.transform.GetChild(0))
-            {
-                Debug.Log("cccc");
-                Destroy(child.transform.GetChild(0).gameObject);
-            }
+            Debug.Log("cccc");
+            Destroy(child.transform.GetChild(0).gameObject);
         }
     }
 }

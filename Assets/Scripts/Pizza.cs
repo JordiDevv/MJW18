@@ -6,58 +6,71 @@ public class Pizza : MonoBehaviour
 {
     public Vector3 pizzaPoint;
 
-    public Transform platePoint;
     public SpriteRenderer spriteRenderer1, spriteRenderer2;
     private Sprite sprite1, sprite2;
-    [SerializeField]
-    private bool isComplete; 
+    [SerializeField] private bool isComplete;
+    Vector3 TablePos => new(5, -3.37f, 0);
+
+    Vector3 platePoint = new(-2.38f,-3.3f,-0.08f);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(MoveTo(where: TablePos));
+    }
+
+
+    IEnumerator MoveTo(Vector3 where)
+    {
+        while (transform.position != where)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, where, 0.3f);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     /// <summary>
     /// Actualiza el sprite de la pizza
     /// </summary>
-    public void UpdateSprite(string spriteName) {
-
-        if (!sprite1) {
+    public void UpdateSprite(string spriteName)
+    {
+        if (!sprite1)
+        {
             sprite1 = Resources.Load<Sprite>("Sprites/" + spriteName);
             spriteRenderer1.sprite = sprite1;
             return;
-            
-        } else if(!isComplete) {
+        }
+        else if (!isComplete)
+        {
             sprite2 = Resources.Load<Sprite>("Sprites/" + spriteName);
             spriteRenderer2.sprite = sprite2;
             isComplete = true;
             StartCoroutine("Move");
         }
-
-        
-       
-       
     }
 
 
-    IEnumerator Move() {
-
+    IEnumerator Move()
+    {
         yield return new WaitForSeconds(0.2f);
-        while (transform.position != pizzaPoint) {
+        while (transform.position != pizzaPoint)
+        {
             transform.position = Vector3.MoveTowards(transform.position, pizzaPoint, 0.3f);
             yield return new WaitForSeconds(0.08f);
         }
-        while (transform.position != platePoint.transform.position) {
-            transform.position = Vector3.MoveTowards(transform.position, platePoint.transform.position, 0.3f);
+
+        while (transform.position != platePoint)
+        {
+            transform.position =
+                Vector3.MoveTowards(transform.position, platePoint, 0.3f);
             yield return new WaitForSeconds(0.08f);
         }
+
         GameManager.Instance.menu.Add("Pizza");
     }
 }

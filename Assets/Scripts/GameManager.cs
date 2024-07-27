@@ -10,20 +10,24 @@ public class GameManager : MonoBehaviour
     public GameObject client;
     public Transform spawnPoint;
 
+    public GameObject pizza;
+    public Transform spawnPointPizza;
+
     public List<string> menu;
 
     public static GameManager Instance;
-    
+
     internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
 
-    private void Awake() {
-        if (Instance == null) {
+    void Awake()
+    {
+        if (Instance == null)
+        {
             Instance = GetComponent<GameManager>();
         }
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,39 +35,43 @@ public class GameManager : MonoBehaviour
         //comenzamos con que el jugador esta jugando
         playerIsPlaying = false;
 
-        SpawnClient();
+        LoopGame();
     }
 
-    // Update is called once per frame
-    void Update()
+    void LoopGame()
     {
-       
-
-
-
+        SpawnClient();
+        SpawnPizza();
     }
 
+    void SpawnPizza()
+    {
+        Instantiate(pizza, spawnPointPizza);
+    }
 
-    private void SpawnClient() {
+    void SpawnClient()
+    {
         Instantiate(client, spawnPoint);
-    
     }
 
     /// <summary>
     /// Acciones que se realizan al terminar de completar el menu
     /// </summary>
-    public void ResetActions() {
-
+    public void ResetActions()
+    {
         Debug.Log("bbbb");
         GameObject dropArea = GameObject.FindGameObjectWithTag("MENU");
         GameObject pizza = GameObject.FindGameObjectWithTag("PIZZA");
 
         dropArea.GetComponent<DropArea>().Reset();
+        Destroy(client,.5f);
         Destroy(pizza);
-        
+
         menuItemsCounter = 0;
         menu.Clear();
 
         playerIsPlaying = false;
+        
+        LoopGame();
     }
 }
