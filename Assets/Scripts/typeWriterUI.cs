@@ -19,6 +19,9 @@ public class typeWriterUI : MonoBehaviour
     [SerializeField] string leadingChar = "";
     [SerializeField] bool leadingCharBeforeDelay = false;
 
+    public AudioSource effectsSource;
+    public AudioClip typeEffect;
+
     // Use this for initialization
     void Start()
     {
@@ -80,6 +83,7 @@ public class typeWriterUI : MonoBehaviour
             _tmpProText.text += c;
             _tmpProText.text += leadingChar;
             yield return new WaitForSeconds(timeBtwChars);
+            effectsSource.PlayOneShot(typeEffect);
         }
 
         if (leadingChar != "")
