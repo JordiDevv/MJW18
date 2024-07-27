@@ -11,7 +11,7 @@ public class Pizza : MonoBehaviour
     [SerializeField] private bool isComplete;
     Vector3 TablePos => new(5, -3.37f, 0);
 
-    Vector3 platePoint = new(-2.38f,-3.3f,-0.08f);
+    Vector3 platePoint = new(-2.38f, -3.3f, -0.08f);
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,7 @@ public class Pizza : MonoBehaviour
         {
             sprite1 = Resources.Load<Sprite>("Sprites/" + spriteName);
             spriteRenderer1.sprite = sprite1;
+            GameManager.Instance.menu.Add(spriteName);
             return;
         }
         else if (!isComplete)
@@ -50,6 +51,7 @@ public class Pizza : MonoBehaviour
             sprite2 = Resources.Load<Sprite>("Sprites/" + spriteName);
             spriteRenderer2.sprite = sprite2;
             isComplete = true;
+            GameManager.Instance.menu.Add(spriteName);
             StartCoroutine("Move");
         }
     }
@@ -70,7 +72,5 @@ public class Pizza : MonoBehaviour
                 Vector3.MoveTowards(transform.position, platePoint, 0.3f);
             yield return new WaitForSeconds(0.08f);
         }
-
-        GameManager.Instance.menu.Add("Pizza");
     }
 }
