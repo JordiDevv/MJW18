@@ -12,6 +12,7 @@ public class StartNarrative : MonoBehaviour
     public int timeStart;
     public int timeChat;
     public int timeOut;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,5 @@ public class StartNarrative : MonoBehaviour
         secondChat.SetActive(false);
         yield return new WaitForSeconds(timeOut);
         SceneManager.LoadScene(sceneName);
-
     }
 }
