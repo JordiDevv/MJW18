@@ -10,11 +10,8 @@ public class DropArea : MonoBehaviour
 
     public void Reset() {
         foreach (var child in positionsParent) {
-
-          
-            Object.Destroy(child.transform.GetChild(0).gameObject);
-    
-
+            Debug.Log("cccc");
+            Destroy(child.transform.GetChild(0).gameObject);
         }
 
 

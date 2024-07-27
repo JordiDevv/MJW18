@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ResetActions() {
 
+        Debug.Log("bbbb");
         GameObject dropArea = GameObject.FindGameObjectWithTag("MENU");
         GameObject pizza = GameObject.FindGameObjectWithTag("PIZZA");
 
