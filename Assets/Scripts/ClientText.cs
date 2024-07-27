@@ -15,7 +15,6 @@ public class ClientText : MonoBehaviour
 
     public IEnumerator TypeText(string line)
     {
-        Debug.Log("Typing text");
         string textBuffer = null;
         foreach (char c in line)
         {

@@ -680,18 +680,18 @@ PrefabInstance:
     - target: {fileID: 1109599822292438292, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 1752400625}
+      objectReference: {fileID: 0}
     - target: {fileID: 4825266469732269461, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_Name
       value: Client
       objectReference: {fileID: 0}
     - target: {fileID: 6776426002371221192, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 6776426002371221192, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.47
       objectReference: {fileID: 0}
     - target: {fileID: 6776426002371221192, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_LocalPosition.z

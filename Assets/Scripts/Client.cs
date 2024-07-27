@@ -1,5 +1,4 @@
-using System;
-using UnityEditor.Tilemaps;
+using System.Collections;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -22,13 +21,26 @@ namespace DefaultNamespace
             Debug.Log(dialogueText.name);
         }
 
+        void Start()
+        {
+            StartCoroutine(MoveTo(orderPoint));
+        }
+
+        IEnumerator MoveTo(Vector3 counter)
+        {
+            while (transform.position != counter)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, counter, 0.3f);
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+
         void Update()
         {
             if (client != null && transform.position == orderPoint)
             {
                 if (dialogueText != null)
                 {
-                    Debug.Log("asdf");
                     client.SayOrder();
                     if (!asdf)
                         ShowDialog();
