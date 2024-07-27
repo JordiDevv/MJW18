@@ -5,7 +5,6 @@ using UnityEngine;
 public class ClientText : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI dialogueText;
-    public string dialogueLines;
     [SerializeField] float charactersPerSecond = 10;
 
     void Awake()

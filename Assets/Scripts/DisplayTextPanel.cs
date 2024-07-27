@@ -28,17 +28,13 @@ public class DisplayTextPanel : MonoBehaviour
 
     void DisplayText()
     {
-        //MoveDown();
         textPanel.SetActive(true);
     }
 
     void HideText()
     {
-        //MoveUp();
         textPanel.SetActive(false);
         IsSpeaking = false;
     }
 
-    void MoveDown() => textPanel.transform.position = new Vector3(textPanel.transform.position.x, textPanel.transform.position.y - rectTransform.height - 20, textPanel.transform.position.z);
-    void MoveUp() => textPanel.transform.position = new Vector3(textPanel.transform.position.x, textPanel.transform.position.y + rectTransform.height + 20, textPanel.transform.position.z);
 }

@@ -26,7 +26,7 @@ namespace DefaultNamespace
             StartCoroutine(MoveTo(orderPoint));
         }
 
-        public IEnumerator MoveTo(Vector3 where)
+        IEnumerator MoveTo(Vector3 where)
         {
             while (transform.position != where)
             {
@@ -37,9 +37,9 @@ namespace DefaultNamespace
 
         void Update()
         {
-            if (client != null && transform.position == orderPoint)
+            if (client && transform.position == orderPoint)
             {
-                if (dialogueText != null)
+                if (dialogueText)
                 {
                     client.SayOrder();
                     if (!speaking)
@@ -66,15 +66,13 @@ namespace DefaultNamespace
         {
             foreach (var item in client.hate.Where(item => item.Contains(order)))
             {
-                Debug.Log("contiene agua");
                 scoreService -= 10;
-                Debug.Log(scoreService);
             }
 
             StartCoroutine(MoveTo(where: new Vector3(500, 0, 0)));
         }
 
-        public bool OrderTaken { get; set; }
+        bool OrderTaken { get; set; }
 
         void ShowDialog()
         {
