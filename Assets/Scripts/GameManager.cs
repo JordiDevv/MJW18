@@ -58,7 +58,9 @@ public class GameManager : MonoBehaviour
 
         dropArea.GetComponent<DropArea>().Reset();
         Destroy(pizza);
-
+        
+        menuItemsCounter = 0;
+        menu.Clear();
 
     }
 }
