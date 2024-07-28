@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &243403278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &438924575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -827,12 +827,12 @@ GameObject:
   - component: {fileID: 679308681}
   - component: {fileID: 679308682}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SecondText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &679308678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -872,9 +872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skwebwqj iuwqe qeweouh fw ehf jwbq fisb dfhbwer wbhbgejwbieqwheijqhwe hqwueh
-    jbteb qwehhoi hnr ewktho qwi hbewihhwqepo ehabt wkjreb lauiwerjhaerawire auywr
-    ukawerb kauwegr awye grukuawger hjwaebr kub,awjzref.
+  m_text: "Si, mi amo y se\xF1or. (Te vas a enterar)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
   m_sharedMaterial: {fileID: -4373770512344116691, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
@@ -964,7 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.012
+  timeBtwChars: 0.015
   leadingChar: 
   leadingCharBeforeDelay: 0
   effectsSource: {fileID: 679308682}
@@ -1456,7 +1454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1303964163
 Transform:
   m_ObjectHideFlags: 0
@@ -1694,12 +1692,12 @@ GameObject:
   - component: {fileID: 1509636837}
   - component: {fileID: 1509636838}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: FirstText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509636834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1739,9 +1737,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rdkwebwqj iuwqe qeweouh fw ehf jwbq fisb dfhbwer wbhbgejwbieqwheijqhwe
-    hqwueh jbteb qwehhoi hnr ewktho qwi hbewihhwqepo ehabt wkjreb lauiwerjhaerawire
-    auywr ukawerb kauwegr awye grukuawger hjwaebr kub,awjzref.
+  m_text: "Vaya pesado... Me da igual que seas el mejor cocinero de Villa Madriguera,
+    no te pienso subir el suedo. En PizzaTown hacemos las cosas a mi manera. Ahora,
+    \xA1ponte a limpiar! Y atiende a los clientes. \xA1Ni se te ocurra ponerles mal
+    la comida!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
   m_sharedMaterial: {fileID: -4373770512344116691, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
@@ -1831,7 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeStart: 0
-  timeBtwChars: 0.012
+  timeBtwChars: 0.015
   leadingChar: 
   leadingCharBeforeDelay: 0
   effectsSource: {fileID: 1509636838}
@@ -1942,12 +1941,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1558890861}
   m_Layer: 0
-  m_Name: Seconds
+  m_Name: Second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1558890861
 Transform:
   m_ObjectHideFlags: 0
@@ -1982,7 +1981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1805096756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2217,11 +2216,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrativePanel: {fileID: 438924574}
-  firstChat: {fileID: 1303964162}
-  secondChat: {fileID: 1558890860}
+  firstChat: {fileID: 1509636833}
+  secondChat: {fileID: 679308677}
+  bossImage: {fileID: 243403277}
+  meImage: {fileID: 1805096755}
   sceneName: Game
-  timeStart: 2
-  timeChat: 5
+  timeStart: 1
+  timeChat1In: 1
+  timeChat2In: 2
+  timeChat1Out: 3
+  timeChat2Out: 1
+  timeMeImageIn: 7
   timeOut: 2
 --- !u!1 &2002988838
 GameObject:
