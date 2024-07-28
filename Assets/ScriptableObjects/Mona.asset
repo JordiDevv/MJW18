@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc0a1f0ddf5404cae775e5aeb525077, type: 3}
   m_Name: Mona
   m_EditorClassIdentifier: 
-  clientName: Mona
+  clientName: Chipiona
   clientDialogue: "Vengo de la clase de pilates con mis amigas. A ver qu\xE9 me pones,
     monada"
-  clientVoice: {fileID: 0}
-  hate: []
+  hate:
+  - Coke
+  - Monster
+  - Peperoni
+  - Fries

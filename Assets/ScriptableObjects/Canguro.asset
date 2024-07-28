@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientName: Canguro
   clientDialogue: Aporta o aparta
-  clientVoice: {fileID: 0}
-  hate: []
+  hate:
+  - Water
+  - Pimiento
+  - Prawn
+  - Apple
