@@ -5,34 +5,19 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
-    public GameObject optionsMenuPanel;
-    public Slider musicVolumeSlider;
-    public Slider effectsVolumeSlider;
+
+
 
     private void Start()
     {
-        // Inicializar sliders con los valores actuales del SoundManager
-        if (SoundManager.instance != null)
-        {
-            float musicVolume;
-            SoundManager.instance.musicMixerGroup.audioMixer.GetFloat("MusicVolume", out musicVolume);
-            musicVolumeSlider.value = Mathf.Pow(10, musicVolume / 20);
 
-            float effectsVolume;
-            SoundManager.instance.effectsMixerGroup.audioMixer.GetFloat("EffectsVolume", out effectsVolume);
-            effectsVolumeSlider.value = Mathf.Pow(10, effectsVolume / 20);
-
-            // Añadir listeners para los cambios en los sliders
-            musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
-            effectsVolumeSlider.onValueChanged.AddListener(SetEffectsVolume);
-        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsMenuPanel.activeSelf)
+            if (pausePanel.activeSelf)
             {
                 CloseOptions();
             }
@@ -51,12 +36,12 @@ public class PauseMenu : MonoBehaviour
     public void OpenOptions()
     {
         pausePanel.SetActive(false);
-        optionsMenuPanel.SetActive(true);
+
     }
 
     public void CloseOptions()
     {
-        optionsMenuPanel.SetActive(false);
+
         pausePanel.SetActive(true);
     }
 

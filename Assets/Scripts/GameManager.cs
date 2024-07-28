@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
     //controla si el jugador esta jugando 
     public bool playerIsPlaying;
-
+    public float gameplayDuration;
     [FormerlySerializedAs("client")] public List<GameObject> clients;
     public Transform spawnPoint;
 
@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     public Text timeText;
 
-  
 
+    public GameObject GameOverMenu;
     internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         //comenzamos con que el jugador no esta jugando
         playerIsPlaying = false;
-
+        GameOverMenu.SetActive(false);
 
         //start with the max amount
         scoreImage.fillAmount = maxScore;
@@ -63,11 +63,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > 120)
+        if (Time.time > gameplayDuration)
         {
             Debug.Log("SE ACABO EL TIEMPO");
             //TODO: se acabo el tiempo pasar a pantalla de resultados
             Time.timeScale = 0;
+            GameOverMenu.SetActive(true);
         }
 
         timeText.text = ((int)Time.time).ToString();
