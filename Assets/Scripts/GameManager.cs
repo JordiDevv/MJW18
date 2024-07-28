@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +43,16 @@ public class GameManager : MonoBehaviour
         playerIsPlaying = false;
 
         LoopGame();
+    }
+
+    void Update()
+    {
+        if (Time.time > 120)
+        {
+            Debug.Log("SE ACABO EL TIEMPO");
+            //TODO: se acabo el tiempo pasar a pantalla de resultados
+            Time.timeScale = 0;
+        }
     }
 
     void LoopGame()
