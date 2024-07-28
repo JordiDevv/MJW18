@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f8480616cadc44caccd855fa43602f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: AntonioTest
+  sceneName: Game
 --- !u!4 &568494220
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   narrativePanel: {fileID: 438924574}
   firstChat: {fileID: 1303964162}
   secondChat: {fileID: 1558890860}
-  sceneName: AntonioTest
+  sceneName: Game
   timeStart: 2
   timeChat: 5
   timeOut: 2
