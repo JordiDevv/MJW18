@@ -11,7 +11,6 @@ namespace DefaultNamespace
         [SerializeField] TMPro.TextMeshProUGUI nameText;
         [SerializeField] GameObject displayTextPanel;
 
-        int scoreService = 100;
         readonly Vector3 orderPoint = Vector3.zero;
         bool speaking;
 
