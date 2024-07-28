@@ -95,16 +95,13 @@ public class GameManager : MonoBehaviour
 
     public void Satisfy(List<string> hate)
     {
-        foreach (var item in hate)
+        if (hate.Any(item => menu.Contains(item)))
         {
-            if (menu.Contains(item))
-            {
-                scoreService -= 5;
-            }
-
-            menuItemsCounter = 0;
-            menu.Clear();
+            scoreService -= 5;
         }
+
+        menuItemsCounter = 0;
+        menu.Clear();
 
         starsText.text = scoreService.ToString();
     }
