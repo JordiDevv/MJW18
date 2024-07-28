@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClientText : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI dialogueText;
-    [SerializeField] float charactersPerSecond = 10;
+    [SerializeField] float charactersPerSecond = 20;
     [SerializeField] AudioSource voice;
     [SerializeField] AudioClip voiceClip;
 

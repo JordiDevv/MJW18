@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public int menuItemsCounter; //contador de items colocados en el menu
 
     [SerializeField]
-    int scoreService = 50;
+    float scoreService = 50;
 
     int maxScore = 50;
 
@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
         dropArea.GetComponent<DropArea>().Reset();
         Destroy(pizza);
 
-
         playerIsPlaying = false;
 
         LoopGame();
@@ -111,6 +110,7 @@ public class GameManager : MonoBehaviour
         if (hate.Any(item => menu.Contains(item)))
         {
             scoreService -= 5;
+            Debug.Log(scoreService);
         }
 
         menuItemsCounter = 0;

@@ -32,12 +32,10 @@ namespace DefaultNamespace
         {
             if (client && transform.position == orderPoint)
             {
-                if (dialogueText)
+                if (dialogueText && !speaking)
                 {
                     displayTextPanel.gameObject.SetActive(true);
-
-                    if (!speaking)
-                        ShowDialog();
+                    ShowDialog();
                 }
 
                 WaitUntilOrder();
@@ -55,8 +53,6 @@ namespace DefaultNamespace
                 Destroy(gameObject, 5f);
             }
         }
-
-
 
         void ShowDialog()
         {
