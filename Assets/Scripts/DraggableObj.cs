@@ -28,7 +28,7 @@ public class DraggableObj : MonoBehaviour
     [SerializeField] private GameObject target;
 
     private Vector2 initialPos;
-
+    public AudioClip PickUpSound;
 
     private void Awake()
     {
@@ -42,6 +42,8 @@ public class DraggableObj : MonoBehaviour
 
         initialPos = transform.position;
         SpawnDraggableObject();
+
+        SoundController.Instance.PlayClip(PickUpSound);
     }
 
 
