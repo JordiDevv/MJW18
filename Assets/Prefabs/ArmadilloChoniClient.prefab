@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4632592298947708687}
   m_Layer: 0
-  m_Name: MonaClient 1
+  m_Name: ArmadilloChoniClient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f175fc1697bc18741a8912ec37d15809, type: 3}
+      objectReference: {fileID: 21300000, guid: 1a6a1d1b252b3264b8dfbbedd205005a, type: 3}
     - target: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_SortingOrder
       value: -1
