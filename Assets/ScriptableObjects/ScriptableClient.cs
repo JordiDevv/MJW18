@@ -10,20 +10,8 @@ namespace ScriptableObjects
         public string clientName;
         public string clientDialogue;
      
-        public AudioSource clientVoice;
-
-      
         public List<string> hate;
 
         bool IsSpeaking { get; set; } = false;
-        
-        public void SayOrder()
-        {
-            if (clientVoice != null)
-            {
-                IsSpeaking = true;
-                clientVoice.Play();
-            }
-        }
     }
 }

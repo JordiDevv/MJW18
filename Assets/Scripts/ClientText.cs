@@ -6,6 +6,8 @@ public class ClientText : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI dialogueText;
     [SerializeField] float charactersPerSecond = 10;
+    [SerializeField] AudioSource voice;
+    [SerializeField] AudioClip voiceClip;
 
     void Awake()
     {
@@ -19,6 +21,7 @@ public class ClientText : MonoBehaviour
         {
             textBuffer += c;
             dialogueText.text = textBuffer;
+            voice.PlayOneShot(voiceClip);
             yield return new WaitForSeconds(1 / charactersPerSecond);
         }
     }

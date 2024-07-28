@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc0a1f0ddf5404cae775e5aeb525077, type: 3}
-  m_Name: Client
+  m_Name: Mono2
   m_EditorClassIdentifier: 
   clientName: Mono2
   clientDialogue: Esta rola me mola. Ouuh Yeah!

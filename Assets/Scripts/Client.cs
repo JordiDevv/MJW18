@@ -8,6 +8,7 @@ namespace DefaultNamespace
     {
         public ScriptableObjects.ScriptableClient client;
         [SerializeField] TMPro.TextMeshProUGUI dialogueText;
+        [SerializeField] TMPro.TextMeshProUGUI nameText;
         [SerializeField] GameObject displayTextPanel;
 
         int scoreService = 100;
@@ -36,7 +37,6 @@ namespace DefaultNamespace
                 {
                     displayTextPanel.gameObject.SetActive(true);
 
-                    client.SayOrder();
                     if (!speaking)
                         ShowDialog();
                 }
@@ -62,7 +62,7 @@ namespace DefaultNamespace
         void ShowDialog()
         {
             speaking = true;
-
+            nameText.text = client.clientName;
             StartCoroutine(dialogueText.GetComponent<ClientText>().TypeText(client.clientDialogue));
         }
     }

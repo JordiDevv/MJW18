@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc0a1f0ddf5404cae775e5aeb525077, type: 3}
-  m_Name: Client 3
+  m_Name: Canguro
   m_EditorClassIdentifier: 
-  clientName: Mona
-  clientDialogue: "Vengo de la clase de pilates con mis amigas. A ver qu\xE9 me pones,
-    monada"
+  clientName: Canguro
+  clientDialogue: Aporta o aparta
   clientVoice: {fileID: 0}
   hate: []
