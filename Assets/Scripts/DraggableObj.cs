@@ -88,6 +88,9 @@ public class DraggableObj : MonoBehaviour
             }
 
             gameObject.GetComponent<Collider2D>().enabled = false;
+        } else {
+            //destroy the object when dropping outside the drop area
+            Destroy(gameObject);
         }
     }
 

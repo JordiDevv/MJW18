@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public Text timeText;
 
+  
+
     internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
@@ -49,8 +51,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //comenzamos con que el jugador esta jugando
+        //comenzamos con que el jugador no esta jugando
         playerIsPlaying = false;
+
 
         //start with the max amount
         scoreImage.fillAmount = maxScore;
