@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
 
     int maxScore = 50;
 
+
+
+    public float maxDuration =120;
+    float currentTime;
+
+
     [SerializeField] TMPro.TextMeshProUGUI starsText;
 
 
@@ -57,21 +63,33 @@ public class GameManager : MonoBehaviour
 
         //start with the max amount
         scoreImage.fillAmount = maxScore;
-        timeText.text = startTime.ToString();
+        
         LoopGame();
+
+        currentTime = maxDuration;
+        timeText.text = currentTime.ToString();
     }
 
     void Update()
     {
-        if (Time.time > gameplayDuration)
-        {
-            Debug.Log("SE ACABO EL TIEMPO");
-            //TODO: se acabo el tiempo pasar a pantalla de resultados
+        //if (Time.time > gameplayDuration)
+        //{
+        //    Debug.Log("SE ACABO EL TIEMPO");
+        //    //TODO: se acabo el tiempo pasar a pantalla de resultados
+        //    Time.timeScale = 0;
+        //    GameOverMenu.SetActive(true);
+        //}
+
+        if (currentTime > 0) {
+            currentTime -= Time.deltaTime;
+        } else {
             Time.timeScale = 0;
             GameOverMenu.SetActive(true);
         }
 
-        timeText.text = ((int)Time.time).ToString();
+        int castedCurrentTime = (int)currentTime;
+
+        timeText.text = castedCurrentTime.ToString();
     }
 
     void LoopGame()
