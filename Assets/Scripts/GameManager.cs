@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     public List<string> menu;
 
     public static GameManager Instance;
+
+    public Text timeText;
 
     internal bool OrderTaken { get; set; }
 
@@ -53,6 +56,8 @@ public class GameManager : MonoBehaviour
             //TODO: se acabo el tiempo pasar a pantalla de resultados
             Time.timeScale = 0;
         }
+
+        timeText.text = ((int)Time.time).ToString();
     }
 
     void LoopGame()
