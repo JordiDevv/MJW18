@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pizza Town
+  m_text: PizzaTown
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
   m_sharedMaterial: {fileID: -4373770512344116691, guid: a2fbf497d53f73a40b629abc16e278f7, type: 2}
@@ -3017,7 +3017,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1233180197}
         m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -3161,7 +3161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 696, y: -116}
+  m_AnchoredPosition: {x: 696, y: -260.14}
   m_SizeDelta: {x: 367.2974, y: 117.0384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237830954
@@ -4543,7 +4543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739178736
 RectTransform:
   m_ObjectHideFlags: 0
