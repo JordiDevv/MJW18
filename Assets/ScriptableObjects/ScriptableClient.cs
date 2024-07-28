@@ -9,10 +9,10 @@ namespace ScriptableObjects
     {
         public string clientName;
         public string clientDialogue;
-        public SpriteRenderer clientSprite;
+     
         public AudioSource clientVoice;
 
-        public List<string> order;
+      
         public List<string> hate;
 
         bool IsSpeaking { get; set; } = false;
