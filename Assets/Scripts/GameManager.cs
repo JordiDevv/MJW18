@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
     internal bool OrderTaken { get; set; }
 
     public int menuItemsCounter; //contador de items colocados en el menu
+
     int scoreService = 50;
+    [SerializeField] TMPro.TextMeshProUGUI starsText;
 
     void Awake()
     {
@@ -68,8 +70,6 @@ public class GameManager : MonoBehaviour
         dropArea.GetComponent<DropArea>().Reset();
         Destroy(pizza);
 
-        menuItemsCounter = 0;
-        menu.Clear();
 
         playerIsPlaying = false;
 
@@ -78,9 +78,17 @@ public class GameManager : MonoBehaviour
 
     public void Satisfy(List<string> hate)
     {
-        foreach (var item in from item in menu from aaa in hate.Where(aaa => item.Contains(aaa)) select item)
+        foreach (var item in hate)
         {
-            scoreService -= 5;
+            if (menu.Contains(item))
+            {
+                scoreService -= 5;
+            }
+
+            menuItemsCounter = 0;
+            menu.Clear();
         }
+
+        starsText.text = scoreService.ToString();
     }
 }
