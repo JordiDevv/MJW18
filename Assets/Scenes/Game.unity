@@ -2155,6 +2155,10 @@ MonoBehaviour:
   playerIsPlaying: 0
   clients:
   - {fileID: 7602659191065023335, guid: c79a284fc23301641914155b12f2ef7c, type: 3}
+  - {fileID: 7602659191065023335, guid: e090de24735531c4f8b579ee73fd88b5, type: 3}
+  - {fileID: 7602659191065023335, guid: 20bf8dcf12177fa4281a915cfb2e8597, type: 3}
+  - {fileID: 7602659191065023335, guid: b4a1a2be32685514484c290b6c0a4729, type: 3}
+  - {fileID: 7602659191065023335, guid: 187ad94a55b7cb745a1f9cd8ffab17f1, type: 3}
   spawnPoint: {fileID: 779942022}
   pizza: {fileID: 7838985111105252511, guid: e1833a785c0878b47bcdd60479746f63, type: 3}
   spawnPointPizza: {fileID: 503257046}
