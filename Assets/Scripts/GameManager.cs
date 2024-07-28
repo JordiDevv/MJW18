@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Text timeText;
-
+    private float startTime = -37f;
 
     public GameObject GameOverMenu;
     internal bool OrderTaken { get; set; }
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         //start with the max amount
         scoreImage.fillAmount = maxScore;
-
+        timeText.text = startTime.ToString();
         LoopGame();
     }
 
