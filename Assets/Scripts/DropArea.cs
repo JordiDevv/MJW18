@@ -11,7 +11,6 @@ public class DropArea : MonoBehaviour
     {
         foreach (var child in positionsParent.Where(child => child.transform.GetChild(0)))
         {
-            Debug.Log("cccc");
             Destroy(child.transform.GetChild(0).gameObject);
         }
     }

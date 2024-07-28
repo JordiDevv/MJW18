@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4632592298947708687}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ArmadilloClient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f849f7065b70c44f91145740c999fb7, type: 3}
+      objectReference: {fileID: 21300000, guid: 4c636cc00018b3f4a9fca0b0f85dee63, type: 3}
     - target: {fileID: 4242014552902580505, guid: f75de5917adf3d94fb32a5f2c4fa450f, type: 3}
       propertyPath: m_SortingOrder
       value: -1
