@@ -28,8 +28,15 @@ public class GameManager : MonoBehaviour
 
     public int menuItemsCounter; //contador de items colocados en el menu
 
+    [SerializeField]
     int scoreService = 50;
+
+    int maxScore = 50;
+
     [SerializeField] TMPro.TextMeshProUGUI starsText;
+
+
+    public Image scoreImage;
 
     void Awake()
     {
@@ -44,6 +51,9 @@ public class GameManager : MonoBehaviour
     {
         //comenzamos con que el jugador esta jugando
         playerIsPlaying = false;
+
+        //start with the max amount
+        scoreImage.fillAmount = maxScore;
 
         LoopGame();
     }
@@ -103,6 +113,15 @@ public class GameManager : MonoBehaviour
         menuItemsCounter = 0;
         menu.Clear();
 
-        starsText.text = scoreService.ToString();
+        //starsText.text = scoreService.ToString();
+        UpdateScoreUI();
+    }
+
+    /// <summary>
+    /// Actualiza la UI del score
+    /// </summary>
+    void UpdateScoreUI() {
+
+        scoreImage.fillAmount = scoreService /maxScore;
     }
 }
