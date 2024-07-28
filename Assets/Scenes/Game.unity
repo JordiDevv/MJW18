@@ -1428,6 +1428,14 @@ PrefabInstance:
       propertyPath: itemID
       value: Peperoni
       objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: nameTag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: pizzaTopping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2531153293615691129, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.47
@@ -1540,6 +1548,14 @@ PrefabInstance:
     - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
       propertyPath: itemID
       value: Pimiento
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: nameTag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: pizzaTopping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531153293615691129, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2202,6 +2218,14 @@ PrefabInstance:
     - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
       propertyPath: itemID
       value: Prawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: nameTag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553279490049537955, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
+      propertyPath: pizzaTopping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2531153293615691129, guid: 970631c9ad2a5c54bb7fe8888f7b01cc, type: 3}
       propertyPath: m_LocalPosition.x
