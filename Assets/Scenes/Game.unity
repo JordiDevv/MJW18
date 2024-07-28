@@ -1562,7 +1562,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIsPlaying: 0
-  client: {fileID: 7602659191065023335, guid: c79a284fc23301641914155b12f2ef7c, type: 3}
+  clients:
+  - {fileID: 7602659191065023335, guid: c79a284fc23301641914155b12f2ef7c, type: 3}
+  - {fileID: 7602659191065023335, guid: ca5cc2f03f9d6984cb8f6435519d5d52, type: 3}
   spawnPoint: {fileID: 779942022}
   pizza: {fileID: 7838985111105252511, guid: e1833a785c0878b47bcdd60479746f63, type: 3}
   spawnPointPizza: {fileID: 503257046}

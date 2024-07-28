@@ -82,13 +82,12 @@ public class DraggableObj : MonoBehaviour
                 Destroy(gameObject, 0.2f);
             }
             else if (GameManager.Instance.menuItemsCounter < 4) FindAvailablePosition();
-
+            else
+            {
+                Destroy(gameObject);
+            }
 
             gameObject.GetComponent<Collider2D>().enabled = false;
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 

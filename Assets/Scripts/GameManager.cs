@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     //controla si el jugador esta jugando 
     public bool playerIsPlaying;
 
-    public GameObject client;
+    [FormerlySerializedAs("client")] public List<GameObject> clients;
     public Transform spawnPoint;
 
     public GameObject pizza;
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnClient()
     {
-        Instantiate(client, spawnPoint);
+        Instantiate(clients[Random.Range(0, clients.Count)], spawnPoint);
     }
 
     /// <summary>
