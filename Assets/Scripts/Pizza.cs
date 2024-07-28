@@ -11,7 +11,7 @@ public class Pizza : MonoBehaviour
     [SerializeField] private bool isComplete;
     Vector3 TablePos => new(5, -3.37f, 0);
 
-    Vector3 platePoint = new(-2.38f, -3.3f, -0.08f);
+    Vector3 platePoint = new(-3.95f, -3.3f, -0.08f);
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class Pizza : MonoBehaviour
     {
         while (transform.position != where)
         {
-            transform.position = Vector3.MoveTowards(transform.position, where, 0.3f);
+            transform.position = Vector3.MoveTowards(transform.position, where, 0.7f);
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -63,14 +63,14 @@ public class Pizza : MonoBehaviour
         while (transform.position != pizzaPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, pizzaPoint, 0.3f);
-            yield return new WaitForSeconds(0.08f);
+            yield return new WaitForSeconds(0.04f);
         }
 
         while (transform.position != platePoint)
         {
             transform.position =
                 Vector3.MoveTowards(transform.position, platePoint, 0.3f);
-            yield return new WaitForSeconds(0.08f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 }

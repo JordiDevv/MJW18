@@ -83,7 +83,7 @@ public class DraggableObj : MonoBehaviour
                 pizza.UpdateSprite(itemID);
                 Destroy(gameObject, 0.2f);
             }
-            else if (GameManager.Instance.menuItemsCounter < 4) FindAvailablePosition();
+            else if (GameManager.Instance.menuItemsCounter < 2) FindAvailablePosition();
             else
             {
                 Destroy(gameObject);

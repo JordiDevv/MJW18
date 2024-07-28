@@ -24,7 +24,7 @@ namespace DefaultNamespace
             while (transform.position != where)
             {
                 transform.position = Vector3.MoveTowards(transform.position, where, 0.3f);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 
